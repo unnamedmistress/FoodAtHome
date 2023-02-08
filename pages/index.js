@@ -118,7 +118,7 @@ const [dietInput, setDietInput] = useState(" ");
                 </div>
                 <div style={{ textAlign: "center", padding: "2%" }}>
                   <label htmlFor="diet">
-                    Diets or restrictions? (Or leave blank)
+                  Diets/restrictions (e.g. vegan, low-carb, no peanuts)?
                   </label>
                   <br />
                   <textarea

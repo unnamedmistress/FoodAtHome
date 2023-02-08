@@ -1,5 +1,10 @@
 # Food At Home
 Perfect for Home Cooks!  Perfect for Busy Parents! Take the guess work out of meal preparation
+Imagine a world where you never have to waste food again. A world where you can save time and money by only buying the ingredients you need for the meals you want to cook. Introducing the ingredient-to-meal idea app!
+
+With this app, simply enter in the ingredients you already have at home and the app will generate a list of meal ideas specifically tailored to what you have on hand. You'll have access to a variety of recipes, including breakfast, lunch, and dinner all made with ingredients you already have. Plus, the app can also help you plan your meals for the week, ensuring that you never run out of ideas.
+
+Not only will this app save you time and money, but it will also reduce food waste and make cooking more enjoyable. Say goodbye to uninspiring meal plans and hello to endless possibilities with the ingredient-to-meal idea app.
 
 # Features
 Easily create meals from the ingredients you have at home!
@@ -8,7 +13,7 @@ Easily create meals from the ingredients you have at home!
 
 # Play with Me
 
-Site address here
+https://foodathome.herokuapp.com/
 ## Steps:
 
 1. Clone this repository:
