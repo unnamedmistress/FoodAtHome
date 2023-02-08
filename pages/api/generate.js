@@ -36,7 +36,7 @@ export default async function (req, res) {
       // PROMPT GOES HERE// To Do: add your own prompt here
       prompt: "List" + servings + "meals (with at least 1 breakfast, 1 lunch, the rest dinners) using up to 6 ingredients each from the given list (milk, eggs, butter, bread, salt, pepper, oil, sugar, cheese slice, ketchup, mustard) and the additional ingredients"+ text + "Include recipe instructions, cook time, and end each recipe with '||' to separate. Follow a diet type of (diet) or standard American diet. Number each meal and write the recipe following it, using alphabetical bullet points for instructions. Indicate the number of servings needed"+ servings + "\n\n",
       ///PROMPT ENDS HERE
-      max_tokens: 1000,
+      max_tokens: 1500,
       temperature: 0,
     });
     res.status(200).json({ result: completion.data.choices[0].text });
