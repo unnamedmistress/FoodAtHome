@@ -15,10 +15,10 @@ export default async function (req, res) {
     return;
   }
 
-  const text = req.body.text || '';
+  const text = req.body.text || 'chicken, rice, noodles, ground beef';
   const meals = req.body.meals || 1;
   const servings = req.body.servings || 1;
-  const diet = req.body.diet || " ";
+  const diet = req.body.diet || "Standard American Diet ";
   const words = text.trim().split(/\s+/).length;
 
   if (words < 5 || words > 250) {
@@ -34,7 +34,8 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       // PROMPT GOES HERE// To Do: add your own prompt here
-      prompt: "List" + meals + "meals (with at least 1 breakfast, 1 lunch, the rest dinners) using up to 6 ingredients or less from this list: (milk, eggs, butter, bread, salt, pepper, oil, sugar, cheese slice, ketchup, mustard) "+ text + ". Do not add include any recipes that include ingredients not listed here. Include recipe Title, instructions, cook time, and end each recipe with '||' to separate.Randomize the results so different meals would show up in each search. Follow a diet type of " + diet + "or standard American diet. Number each meal and write the recipe following it, Do not list meal type (breakfast, lunch or dinner) just the title, using alphabetical bullet points for instructions. Include only this many servings" + servings,
+      prompt: `List ${meals} meals (with at least 1 breakfast, 1 lunch, the rest dinners) using up to 6 ingredients or less from this list: (milk, eggs, butter, bread, salt, pepper, oil, sugar, cheese slice, ketchup, mustard) ${text}. Do not add include any recipes that include ingredients not listed here. Include recipe Title, instructions, cook time, and end each recipe with '||' to separate.Randomize the recipe results so different meals would show up each time someone searched. Follow a diet type of ${diet} . Number each meal and write the recipe following it, Do not list meal type (breakfast, lunch or dinner) just the title, using alphabetical bullet points for instructions. Include only this many servings ${servings}\n`,
+
       ///PROMPT ENDS HERE
       max_tokens: 1500,
       temperature: 0,
