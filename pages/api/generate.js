@@ -34,12 +34,13 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       // PROMPT GOES HERE// To Do: add your own prompt here
-      prompt: "List" + servings + "meals (with at least 1 breakfast, 1 lunch, the rest dinners) using up to 6 ingredients each from the given list (milk, eggs, butter, bread, salt, pepper, oil, sugar, cheese slice, ketchup, mustard) and the additional ingredients"+ text + "Include recipe instructions, cook time, and end each recipe with '||' to separate.Randomize the results so different meals would show up each search. Follow a diet type of (diet) or standard American diet. Number each meal and write the recipe following it, using alphabetical bullet points for instructions. Indicate the number of servings needed"+ servings + "\n\n",
+      prompt: "List" + meals + "meals (with at least 1 breakfast, 1 lunch, the rest dinners) using up to 6 ingredients each from the given list (milk, eggs, butter, bread, salt, pepper, oil, sugar, cheese slice, ketchup, mustard) and/or"+ text + ". Do not add include any recipes that include ingredients not listed here. Include recipe Title, instructions, cook time, and end each recipe with '||' to separate.Randomize the results so different meals would show up in each search. Follow a diet type of " + diet + "or standard American diet. Number each meal and write the recipe following it, Do not list meal type (breakfast, lunch or dinner) just the name of the meal, using alphabetical bullet points for instructions. Indicate the number of servings it provides for" + servings,
       ///PROMPT ENDS HERE
       max_tokens: 1500,
-      temperature: 0.2,
+      temperature: 0,
     });
     res.status(200).json({ result: completion.data.choices[0].text });
+    console.log(result)
   } catch(error) {
     // Consider adjusting the error handling logic for your use case
     if (error.response) {
