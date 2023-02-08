@@ -34,7 +34,7 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       // PROMPT GOES HERE// To Do: add your own prompt here
-      prompt: "List" + meals + "meals that can be cooked with only these ingredients included in this prompt, use only 6 ingredients or less in each recipe, Show the recipe as well, Diet type " +diet + " or just use the standard american diet. include at least one breakfast meal and a at least one lunch meal and the rest are dinners. Each meal to be numbered and the recipe following it and a line space between meals, recipe instructions should be not numbered but alphabetical (a,b,c) and so on. include cook time. End each recipe with || to separate them. Ingredients: milk, eggs, butter, bread, salt, pepper, oil, sugar, cheese slice, ketchup, mustard" + text + "for number of servings" + servings +"\n\n",
+      prompt: "List" + servings + "meals (with at least 1 breakfast, 1 lunch, the rest dinners) using up to 6 ingredients each from the given list (milk, eggs, butter, bread, salt, pepper, oil, sugar, cheese slice, ketchup, mustard) and the additional ingredients"+ text + "Include recipe instructions, cook time, and end each recipe with '||' to separate. Follow a diet type of (diet) or standard American diet. Number each meal and write the recipe following it, using alphabetical bullet points for instructions. Indicate the number of servings needed"+ servings + "\n\n",
       ///PROMPT ENDS HERE
       max_tokens: 1000,
       temperature: 0,

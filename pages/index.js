@@ -159,10 +159,10 @@ const [dietInput, setDietInput] = useState(" ");
           </div>
         </main>
       </div>
-      <div style={{ width: "100%", backgroundColor: "#03A9F4", padding: "1rem" }}>
+      <div style={{ width: "100%", backgroundColor: "#03A9F4", padding: "1rem", textAlign: "center" }}>
         {loading ? (
-          <div>
-            ... Thinking of delicious meals 🍴
+          <div style={{ width: "100%", backgroundColor: "#03A9F4", padding: "1rem", textAlign: "center" }}>
+           <h1>... Thinking of delicious meals 🍴</h1> 
             <h2>I'm new and a little slow this may take a few mins</h2>
           </div>
         ) : (
